@@ -120,11 +120,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
                 , textInputEditTextPassword.getText().toString().trim())) {
 
-            String user = databaseHelper.getUser(textInputEditTextEmail.getText().toString().trim()
+            String user = databaseHelper.getUsername(textInputEditTextEmail.getText().toString().trim()
                     , textInputEditTextPassword.getText().toString().trim());
-
-            Intent accountsIntent = new Intent(activity, HomeActivity.class);
-            accountsIntent.putExtra("EMAIL", user);
+            String email = databaseHelper.getEmail(textInputEditTextEmail.getText().toString().trim()
+                    , textInputEditTextPassword.getText().toString().trim());
+            String userId = databaseHelper.getUserId(textInputEditTextEmail.getText().toString().trim()
+                    , textInputEditTextPassword.getText().toString().trim());
+            UserContext.setUserId(userId);
+            Intent accountsIntent = new Intent(activity, ControlActivity.class);
+            accountsIntent.addCategory(Intent.CATEGORY_HOME);
+            accountsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            accountsIntent.putExtra("USERNAME", user);
+            accountsIntent.putExtra("EMAIL", email);
             emptyInputEditText();
             startActivity(accountsIntent);
 

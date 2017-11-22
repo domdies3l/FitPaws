@@ -6,41 +6,88 @@ package master.fitpaws;
 
 public class User {
 
-    private int id;
-    private String name;
-    private String email;
-    private String password;
+    private static String id;
+    private static String name;
+    private static String email;
+    private static String password;
+    private static String age;
 
-    public int getId() {
+    public static String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public static void setId(String id) {
+        User.id = id;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public static void setName(String name) {
+        User.name = name;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static void setEmail(String email) {
+        User.email = email;
     }
 
-    public String getPassword() {
+    public static String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public static void setPassword(String password) {
+        User.password = password;
     }
+
+    public static String getAge() {
+        return age;
+    }
+
+    public static void setAge(String age) {
+        User.age = age;
+    }
+
+    public static String getWeight() {
+        return weight;
+    }
+
+    public static void setWeight(String weight) {
+        User.weight = weight;
+    }
+
+    public static String getSex() {
+        return sex;
+    }
+
+    public static void setSex(String sex) {
+        User.sex = sex;
+    }
+
+    public static String getBreed() {
+        return breed;
+    }
+
+    public static void setBreed(String breed) {
+        User.breed = breed;
+    }
+
+    public static String getColor() {
+        return color;
+    }
+
+    public static void setColor(String color) {
+        User.color = color;
+    }
+
+    private static String weight;
+    private static String sex;
+    private static String breed;
+    private static String color;
+
 
 }

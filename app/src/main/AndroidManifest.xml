@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="master.fitpaws">
 
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,13 +30,32 @@
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".UsersListActivity"
+            android:name=".TemperatureListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HeartRateListActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".ProfileActivity" />
+        <activity
+            android:name=".ControlActivity"
+            android:launchMode="singleTop"
+            />
+        <activity android:name=".BluetoothActivity" />
+
+        <service
+            android:name=".BluetoothLeService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".TemperatureActivity"
+            android:label="@string/title_activity_temperature"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

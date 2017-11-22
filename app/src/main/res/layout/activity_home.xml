@@ -1,37 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <android.support.v7.widget.LinearLayoutCompat
+    <include
+        layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent" />
 
-        <android.support.v7.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="5dp"
-            android:text="@string/text_hello" />
+    <!--<android.support.design.widget.NavigationView-->
+        <!--android:id="@+id/nav_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--app:headerLayout="@layout/nav_header_main"-->
+        <!--app:menu="@menu/activity_main_drawer" />-->
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/textViewName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <!--<android.support.v7.widget.LinearLayoutCompat-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal">-->
 
-        <android.support.v7.widget.AppCompatImageButton
-            android:id="@+id/settingsButton"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:scaleType="fitCenter"
-            android:background="@color/colorPrimary"
-            android:layout_marginLeft="200dp"
-            android:clickable="true"
-            android:src="@drawable/cog"/>
+        <!--<android.support.v7.widget.AppCompatTextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingRight="5dp"-->
+            <!--android:text="@string/text_hello" />-->
 
-    </android.support.v7.widget.LinearLayoutCompat>
+        <!--<android.support.v7.widget.AppCodompatTextView-->
+            <!--android:id="@+id/textViewName"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
 
-</LinearLayout>
+        <!--&lt;!&ndash;<android.support.v7.widget.AppCompatImageButton&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/settingsButton"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="20dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="20dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:scaleType="fitCenter"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="@color/colorPrimary"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="200dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:clickable="true"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/cog"/>&ndash;&gt;-->
+
+    <!--</android.support.v7.widget.LinearLayoutCompat>-->
+
+</android.support.v4.widget.DrawerLayout>

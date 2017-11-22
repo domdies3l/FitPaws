@@ -9,41 +9,42 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import master.fitpaws.HeartRates;
 import master.fitpaws.R;
-import master.fitpaws.User;
+import master.fitpaws.Temperatures;
 
 /**
  * Created by domin on 10/21/2017.
  */
 
-public class UsersRecyclerAdapter extends RecyclerView.Adapter<UsersRecyclerAdapter.UserViewHolder> {
+public class HeartRateRecyclerAdapter extends RecyclerView.Adapter<HeartRateRecyclerAdapter.UserViewHolder> {
 
-    private List<User> listUsers;
+    private List<HeartRates> HeartRates;
 
-    public UsersRecyclerAdapter(List<User> listUsers) {
-        this.listUsers = listUsers;
+    public HeartRateRecyclerAdapter(List<HeartRates> listHR) {
+        this.HeartRates = listHR;
     }
 
     @Override
     public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // inflating recycler item view
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_user_recycler, parent, false);
+                .inflate(R.layout.hr_recycler, parent, false);
 
         return new UserViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-        holder.textViewName.setText(listUsers.get(position).getName());
-        holder.textViewEmail.setText(listUsers.get(position).getEmail());
-        holder.textViewPassword.setText(listUsers.get(position).getPassword());
+        holder.textViewName.setText(HeartRates.get(position).getHeartRate());
+        holder.textViewEmail.setText(HeartRates.get(position).getDate());
+
     }
 
     @Override
     public int getItemCount() {
-        Log.v(UsersRecyclerAdapter.class.getSimpleName(),""+listUsers.size());
-        return listUsers.size();
+        Log.v(HeartRateRecyclerAdapter.class.getSimpleName(),""+HeartRates.size());
+        return HeartRates.size();
     }
 
 
@@ -54,13 +55,13 @@ public class UsersRecyclerAdapter extends RecyclerView.Adapter<UsersRecyclerAdap
 
         public AppCompatTextView textViewName;
         public AppCompatTextView textViewEmail;
-        public AppCompatTextView textViewPassword;
+//        public AppCompatTextView textViewPassword;
 
         public UserViewHolder(View view) {
             super(view);
-            textViewName = (AppCompatTextView) view.findViewById(R.id.textViewName);
-            textViewEmail = (AppCompatTextView) view.findViewById(R.id.textViewEmail);
-            textViewPassword = (AppCompatTextView) view.findViewById(R.id.textViewPassword);
+            textViewName = (AppCompatTextView) view.findViewById(R.id.heartRateTextViewName);
+            textViewEmail = (AppCompatTextView) view.findViewById(R.id.heartRateTextViewEmail);
+//            textViewPassword = (AppCompatTextView) view.findViewById(R.id.textViewPassword);
         }
     }
 
